@@ -1,0 +1,6 @@
+__pycache__/
+gin/
+iba/
+rum/
+*.pyc
+ginCocktails.txt
