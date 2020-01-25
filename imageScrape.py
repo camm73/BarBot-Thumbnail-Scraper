@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from optparse import OptionParser
 import sys
 import boto3
-from flask_api import Flask-API
+from flask_api import FlaskAPI
 
 app = FlaskAPI(__name__)
 
