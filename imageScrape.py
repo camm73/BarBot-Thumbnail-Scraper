@@ -16,7 +16,7 @@ def lambda_handler(event, context):
 
 
 def getCocktail(textInput):
-
+    browser = None
     try:
         cocktail = textInput + ' cocktail'
         chrome_options = webdriver.ChromeOptions()
@@ -63,6 +63,7 @@ def getCocktail(textInput):
 
         browser.close()
         return True
-    except Exception:
+    except Exception as e:
+        print(e)
         browser.close()
         return False
