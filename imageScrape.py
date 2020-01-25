@@ -62,11 +62,11 @@ def getCocktail(textInput):
         response = s3_client.upload_file(textInput + '.jpg', 'barbot-data', textInput + '.jpg')
 
         browser.close()
-        return True
+        return 'true'
     except Exception as e:
         print(e)
         browser.close()
-        return False
+        return 'false'
 
 
 if __name__ == "__main__":
