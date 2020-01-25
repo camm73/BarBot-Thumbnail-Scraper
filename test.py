@@ -1,6 +1,7 @@
 import time
 from imageScrape import getCocktail
 
+'''
 cocktailList = None
 
 with open('cocktails.txt', 'r') as file:
@@ -10,3 +11,7 @@ for cocktail in cocktailList:
     res = getCocktail(cocktail)
     while not res:
         res = getCocktail(cocktail)
+'''
+
+getCocktail("Tequila Sunrise")
+print("Done")
