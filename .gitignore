@@ -4,3 +4,5 @@ iba/
 rum/
 *.pyc
 ginCocktails.txt
+packages/
+publish.sh
