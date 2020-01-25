@@ -6,28 +6,13 @@ from optparse import OptionParser
 import sys
 import boto3
 
-'''
-version_msg = "%prog 1.0"
-usage_msg = """%prog COCKTAIL_NAME
-
-Save an image of COCKTAIL NAME"""
-
-parser = OptionParser(version=version_msg, usage=usage_msg)
-options, args = parser.parse_args(sys.argv[1:])
-
-if(len(args) < 1):
-    print('You must include a cocktail name!')
-    quit(0)
-
-query = ''
-for i in args:
-    query += i
-    query += ' '
-
-query += 'cocktail'
-
-getCocktail(query)
-'''
+def lambda_handler(event, context):
+    cocktailName = event['cocktail']
+    status = getCocktail(cocktailName)
+    return {
+        'statusCode': 200,
+        'body': json.dumps("Thumbnail status: " + str(status))
+    }
 
 
 def getCocktail(textInput):
