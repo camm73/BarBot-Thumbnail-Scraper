@@ -10,7 +10,7 @@ from flask_api import FlaskAPI
 app = FlaskAPI(__name__)
 
 
-@app.route('/thumbnail/<string:cocktailName>', strict_slashes=False, methods=['GET'])
+@app.route('/thumbnail/<string:textInput>', strict_slashes=False, methods=['GET'])
 def getCocktail(textInput):
     browser = None
     try:
