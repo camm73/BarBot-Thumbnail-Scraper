@@ -5,16 +5,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 from optparse import OptionParser
 import sys
 import boto3
+from flask_api import Flask-API
 
-def lambda_handler(event, context):
-    cocktailName = event['cocktail']
-    status = getCocktail(cocktailName)
-    return {
-        'statusCode': 200,
-        'body': json.dumps("Thumbnail status: " + str(status))
-    }
+app = FlaskAPI(__name__)
 
 
+@app.route('/thumbnail/<string:cocktailName>', strict_slashes=False, methods=['GET'])
 def getCocktail(textInput):
     browser = None
     try:
@@ -70,3 +66,7 @@ def getCocktail(textInput):
         print(e)
         browser.close()
         return False
+
+
+if __name__ == "__main__":
+    app.run(debug=False, host='0.0.0.0')
