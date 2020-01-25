@@ -23,7 +23,7 @@ def getCocktail(textInput):
         prefs = {"profile.managed_default_content_settings.images": 2}
         chrome_options.add_argument('headless')
 
-        browser = webdriver.Chrome(chrome_options=chrome_options)
+        browser = webdriver.Chrome(exectuable_path=ChromeDriverManager.install(),chrome_options=chrome_options)
 
         browser.get('https://www.google.com/advanced_image_search')
 
